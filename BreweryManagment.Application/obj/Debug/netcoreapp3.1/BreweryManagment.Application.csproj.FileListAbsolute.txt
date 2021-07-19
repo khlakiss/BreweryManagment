@@ -1,0 +1,12 @@
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\bin\Debug\netcoreapp3.1\BreweryManagment.Application.deps.json
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\bin\Debug\netcoreapp3.1\BreweryManagment.Application.dll
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\bin\Debug\netcoreapp3.1\BreweryManagment.Application.pdb
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\obj\Debug\netcoreapp3.1\BreweryManagment.Application.csprojAssemblyReference.cache
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\obj\Debug\netcoreapp3.1\BreweryManagment.Application.AssemblyInfoInputs.cache
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\obj\Debug\netcoreapp3.1\BreweryManagment.Application.AssemblyInfo.cs
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\obj\Debug\netcoreapp3.1\BreweryManagment.Application.csproj.CoreCompileInputs.cache
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\obj\Debug\netcoreapp3.1\BreweryManagment.Application.dll
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\obj\Debug\netcoreapp3.1\BreweryManagment.Application.pdb
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\bin\Debug\netcoreapp3.1\BreweryManagment.Domain.dll
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\bin\Debug\netcoreapp3.1\BreweryManagment.Domain.pdb
+D:\Source\Repos\BreweryManagment\BreweryManagment.Application\obj\Debug\netcoreapp3.1\BreweryManagment.Application.csproj.CopyComplete

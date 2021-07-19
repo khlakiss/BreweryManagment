@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "V4xco3UNuKtTmvyHpRu8wHvG+3ogLex5IPMBqYeNHS1c0W8hxY4PHN3gdo8L3rg706IO+2AOMbi4PXykcH7+Ig==",
+  "success": true,
+  "projectFilePath": "D:\\Source\\Repos\\BreweryManagment\\BreweryManagment.Application\\BreweryManagment.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\khaldoun.lakiss\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\khaldoun.lakiss\\.nuget\\packages\\fluentvalidation\\10.3.0\\fluentvalidation.10.3.0.nupkg.sha512",
+    "C:\\Users\\khaldoun.lakiss\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\khaldoun.lakiss\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\khaldoun.lakiss\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\khaldoun.lakiss\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.17\\microsoft.extensions.dependencyinjection.abstractions.3.1.17.nupkg.sha512",
+    "C:\\Users\\khaldoun.lakiss\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

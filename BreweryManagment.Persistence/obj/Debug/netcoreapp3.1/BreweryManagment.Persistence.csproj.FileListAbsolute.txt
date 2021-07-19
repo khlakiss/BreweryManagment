@@ -1,0 +1,17 @@
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\bin\Debug\netcoreapp3.1\BreweryManagment.Persistence.deps.json
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\bin\Debug\netcoreapp3.1\BreweryManagment.Persistence.runtimeconfig.json
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\bin\Debug\netcoreapp3.1\BreweryManagment.Persistence.runtimeconfig.dev.json
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\bin\Debug\netcoreapp3.1\BreweryManagment.Persistence.dll
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\bin\Debug\netcoreapp3.1\BreweryManagment.Persistence.pdb
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\obj\Debug\netcoreapp3.1\BreweryManagment.Persistence.csprojAssemblyReference.cache
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\obj\Debug\netcoreapp3.1\BreweryManagment.Persistence.AssemblyInfoInputs.cache
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\obj\Debug\netcoreapp3.1\BreweryManagment.Persistence.AssemblyInfo.cs
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\obj\Debug\netcoreapp3.1\BreweryManagment.Persistence.csproj.CoreCompileInputs.cache
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\obj\Debug\netcoreapp3.1\BreweryManagment.Persistence.dll
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\obj\Debug\netcoreapp3.1\BreweryManagment.Persistence.pdb
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\obj\Debug\netcoreapp3.1\BreweryManagment.Persistence.genruntimeconfig.cache
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\bin\Debug\netcoreapp3.1\BreweryManagment.Domain.dll
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\bin\Debug\netcoreapp3.1\BreweryManagment.Domain.pdb
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\obj\Debug\netcoreapp3.1\BreweryManagment.Persistence.csproj.CopyComplete
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\bin\Debug\netcoreapp3.1\BreweryManagment.Application.dll
+D:\Source\Repos\BreweryManagment\BreweryManagment.Persistence\bin\Debug\netcoreapp3.1\BreweryManagment.Application.pdb

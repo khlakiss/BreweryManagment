@@ -1,0 +1,8 @@
+D:\Source\Repos\BreweryManagment\BreweryManagment.Domain\bin\Debug\netcoreapp3.1\BreweryManagment.Domain.deps.json
+D:\Source\Repos\BreweryManagment\BreweryManagment.Domain\bin\Debug\netcoreapp3.1\BreweryManagment.Domain.dll
+D:\Source\Repos\BreweryManagment\BreweryManagment.Domain\bin\Debug\netcoreapp3.1\BreweryManagment.Domain.pdb
+D:\Source\Repos\BreweryManagment\BreweryManagment.Domain\obj\Debug\netcoreapp3.1\BreweryManagment.Domain.AssemblyInfoInputs.cache
+D:\Source\Repos\BreweryManagment\BreweryManagment.Domain\obj\Debug\netcoreapp3.1\BreweryManagment.Domain.AssemblyInfo.cs
+D:\Source\Repos\BreweryManagment\BreweryManagment.Domain\obj\Debug\netcoreapp3.1\BreweryManagment.Domain.csproj.CoreCompileInputs.cache
+D:\Source\Repos\BreweryManagment\BreweryManagment.Domain\obj\Debug\netcoreapp3.1\BreweryManagment.Domain.dll
+D:\Source\Repos\BreweryManagment\BreweryManagment.Domain\obj\Debug\netcoreapp3.1\BreweryManagment.Domain.pdb
