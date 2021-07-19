@@ -9,7 +9,9 @@ namespace BreweryManagment.Application.Features.Beer.Commands.DeleteBeer
     {
         public DeleteBeerCommandValidator()
         {
-
+            RuleFor(p => p.Id)
+               .NotEmpty().WithMessage("{PropertyName} is required.")
+               .NotNull();
         }
     }
 }

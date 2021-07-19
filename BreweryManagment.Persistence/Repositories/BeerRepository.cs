@@ -28,20 +28,24 @@ namespace BreweryManagment.Persistence.Repositories
         {
             List<BeerDetailsDto> result = new List<BeerDetailsDto>();
 
+            //Get all beers from db
             var beers = await _context.Set<Beer>().ToListAsync();
             if (beers == null)
                 return null;
 
+            //Loop them to add their details
             foreach (var item in beers)
             {
                 BeerDetailsDto beerDetails = new BeerDetailsDto();
                 beerDetails.Beer = item.Name;
 
+                //Get the brewery Name
                 var brewery = await _context.Set<Brewery>().FirstOrDefaultAsync(br => br.Id == item.BreweryId);
                 if (brewery == null)
                     return null;
                 beerDetails.Brewery = brewery.Name;
 
+                //Get all the wholselers
                 var wholesalerBeerIds = await _context.Set<WholesalerBeer>().Where(wb => wb.BeerId == item.Id).Select(wb => wb.WholesalerId).ToListAsync();
                 if (wholesalerBeerIds != null)
                 {

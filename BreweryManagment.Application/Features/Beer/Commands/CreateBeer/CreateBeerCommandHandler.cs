@@ -24,28 +24,36 @@ namespace BreweryManagment.Application.Features.Beer.Commands.CreateBeer
         {
             var response = new CreateBeerCommandResponse();
 
-            var validator = new CreateBeerCommandValidator();
-            var validationResult = await validator.ValidateAsync(request);
-
-            if (validationResult.Errors.Count > 0)
+            try
             {
-                response.Success = false;
-                response.ValidationErrors = new List<string>();
-                foreach (var error in validationResult.Errors)
+                var validator = new CreateBeerCommandValidator();
+                var validationResult = await validator.ValidateAsync(request);
+
+                if (validationResult.Errors.Count > 0)
                 {
-                    response.ValidationErrors.Add(error.ErrorMessage);
+                    response.Success = false;
+                    response.ValidationErrors = new List<string>();
+                    foreach (var error in validationResult.Errors)
+                    {
+                        response.ValidationErrors.Add(error.ErrorMessage);
+                    }
+                }
+
+                if (response.Success)
+                {
+                    var entity = _mapper.Map<Domain.Entities.Beer>(request.Beer);
+                    await _repository.AddAsync(entity);
+                    response.Beer.Name = entity.Name;
+                    response.Beer.Price = entity.Price.Value;
+                    response.Beer.AlcoholPercentage = entity.AlcoholPercentage.Value;
+                    response.Beer.BreweryId = entity.BreweryId;
+                    response.Beer.Id = entity.Id;
                 }
             }
-
-            if (response.Success)
+            catch (Exception ex)
             {
-                var entity = _mapper.Map<Domain.Entities.Beer>(request.Beer);
-                await _repository.AddAsync(entity);
-                response.Beer.Name = entity.Name;
-                response.Beer.Price = entity.Price.Value;
-                response.Beer.AlcoholPercentage = entity.AlcoholPercentage.Value;
-                response.Beer.BreweryId = entity.BreweryId;
-                response.Beer.Id = entity.Id;
+                response.Success = false;
+                response.Message = ex.Message;
             }
 
             return response;

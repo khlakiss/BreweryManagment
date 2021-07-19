@@ -9,7 +9,13 @@ namespace BreweryManagment.Application.Features.Wholesaler.Queries.RequestQuote
     {
         public RequestQuoteCommandValidator()
         {
+            RuleFor(p => p.Quote.WholesalerId)
+                  .NotEmpty().WithMessage("{PropertyName} is required.")
+                  .NotNull();
 
+            RuleFor(p => p.Quote.QuoteDetails)
+                .NotEmpty().WithMessage("{PropertyName} is required.")
+                .NotNull();
         }
     }
 }

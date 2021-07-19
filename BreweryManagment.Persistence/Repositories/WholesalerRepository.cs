@@ -4,6 +4,7 @@ using BreweryManagment.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,24 @@ namespace BreweryManagment.Persistence.Repositories
         public WholesalerRepository(BreweryDBContext context)
         {
             _context = context;
+        }
+
+        public async Task<bool> CheckIfSaleExist(WholesalerBeer entity)
+        {
+            var wholesalerBeer = await _context.WholesalerBeer.FirstOrDefaultAsync(wb => wb.BeerId == entity.BeerId && wb.WholesalerId == entity.WholesalerId);
+            if (wholesalerBeer != null)
+                return true; 
+
+            return false;
+        }
+
+        public async Task<bool> CheckDuplicateOrder(List<QuoteDetailsDto> order)
+        {
+            var duplicate = order.GroupBy(o=>o.BeerId).Any(c=>c.Count()>1);
+            if (duplicate)
+                return true;
+
+            return false;
         }
 
         public async Task<WholesalerBeer> AddAsync(WholesalerBeer entity)
@@ -58,12 +77,14 @@ namespace BreweryManagment.Persistence.Repositories
                 WholesalerBeer wholesalerBeer = await _context.WholesalerBeer.FirstOrDefaultAsync(wb => wb.BeerId == item.BeerId && wb.WholesalerId == request.WholesalerId);
                 if (wholesalerBeer != null)
                 {
+                    //Check if the wholesaler has the quantity ordered in stock
                     if (item.Quantity > wholesalerBeer.StockQuantity)
                     {
                         NotInStockItems.Add(item);
                         continue;
                     }
 
+                    //Get the price of the item
                     Beer beer = await _context.Beer.FirstOrDefaultAsync(b => b.Id == item.BeerId);
                     Price = Price + (beer.Price.Value * item.Quantity);
                     TotalQuantity = TotalQuantity + item.Quantity;
@@ -72,11 +93,13 @@ namespace BreweryManagment.Persistence.Repositories
                 }
                 else
                 {
+                    //The item requested do not exist in the stock
                     MissingItems.Add(item);
                     continue;
                 }
             }
 
+            //Check if the number of items requested in order to give discount
             if (TotalQuantity > 10)
             {
                 Discount = (Price * 10) / 100;

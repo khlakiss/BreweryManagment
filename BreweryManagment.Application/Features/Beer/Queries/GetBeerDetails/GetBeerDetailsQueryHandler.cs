@@ -12,11 +12,9 @@ namespace BreweryManagment.Application.Features.Beer.Queries.GetBeerDetails
     public class GetBeerDetailsQueryHandler : IRequestHandler<GetBeerDetailsQuery, GetBeerDetailsQueryResponse>
     {
         private readonly IBeerRepository _repository;
-        private readonly IMapper _mapper;
 
-        public GetBeerDetailsQueryHandler(IMapper mapper, IBeerRepository repository)
+        public GetBeerDetailsQueryHandler(IBeerRepository repository)
         {
-            _mapper = mapper;
             _repository = repository;
         }
 
@@ -24,9 +22,21 @@ namespace BreweryManagment.Application.Features.Beer.Queries.GetBeerDetails
         {
             var response = new GetBeerDetailsQueryResponse();
 
-            if (response.Success)
+            try
             {
-                response.BeerDetails = await _repository.GetBeersDetails();
+                var beerDetails = await _repository.GetBeersDetails();
+                if (beerDetails == null || beerDetails.Count == 0)
+                {
+                    response.Success = false;
+                    response.Message = "Something Went Wrong";
+                }
+
+                response.BeerDetails = beerDetails;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
             }
 
             return response;

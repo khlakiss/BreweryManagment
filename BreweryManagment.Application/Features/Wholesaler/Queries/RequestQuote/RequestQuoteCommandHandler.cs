@@ -24,22 +24,41 @@ namespace BreweryManagment.Application.Features.Wholesaler.Queries.RequestQuote
         {
             var response = new RequestQuoteCommandResponse();
 
-            var validator = new RequestQuoteCommandValidator();
-            var validationResult = await validator.ValidateAsync(request);
+            try
+            {
+                var validator = new RequestQuoteCommandValidator();
+                var validationResult = await validator.ValidateAsync(request);
 
-            if (validationResult.Errors.Count > 0)
+                if (validationResult.Errors.Count > 0)
+                {
+                    response.Success = false;
+                    response.ValidationErrors = new List<string>();
+                    foreach (var error in validationResult.Errors)
+                    {
+                        response.ValidationErrors.Add(error.ErrorMessage);
+                    }
+                }
+
+                if (response.Success)
+                {
+                    //Check if the order has duplicates
+                    var duplicates = await _repository.CheckDuplicateOrder(request.Quote.QuoteDetails);
+                    if (duplicates)
+                    {
+                        response.Success = false;
+                        response.ValidationErrors = new List<string>();
+                        response.ValidationErrors.Add("Order submited contains dupplicates");
+                        return response;
+                    }
+
+                    response.QuoteResponse = await _repository.RequestQuote(request.Quote);
+                }
+
+            }
+            catch (Exception ex)
             {
                 response.Success = false;
-                response.ValidationErrors = new List<string>();
-                foreach (var error in validationResult.Errors)
-                {
-                    response.ValidationErrors.Add(error.ErrorMessage);
-                }
-            }
-
-            if (response.Success)
-            {
-                response.QuoteResponse = await _repository.RequestQuote(request.Quote);
+                response.Message = ex.Message;
             }
 
             return response;

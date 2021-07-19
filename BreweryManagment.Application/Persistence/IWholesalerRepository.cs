@@ -9,6 +9,10 @@ namespace BreweryManagment.Application.Persistence
 {
     public interface IWholesalerRepository
     {
+        Task<bool> CheckIfSaleExist(WholesalerBeer entity);
+
+        Task<bool> CheckDuplicateOrder(List<QuoteDetailsDto> order);
+
         Task<WholesalerBeer> AddAsync(WholesalerBeer entity);
 
         Task UpdateAsync(WholesalerBeer entity);
